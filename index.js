@@ -1,13 +1,38 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+
+  const seenNumbers = {}
+  for (const number of array){
+    const complement = target - number
+      if(complement in seenNumbers)return true
+      seenNumbers[number] = true
+  }
+  return false
 }
+
+/*
+function hasTargetSum(array, target){
+  const seenNumbers = {}
+  for(let i = 0; i<array.length; i++){
+    const currentNumber = array[i]
+    const neededSelectedValue = target - currentNumber
+    const secondNumber = seenNumbers[neededSelectedValue]
+    if(secondNumber != null){
+      return [secondNumber, i]
+    } else {
+      seenNumbers[currentNumber] = i
+    }
+  }
+}
+*/
 
 /* 
   Write the Big O time complexity of your function here
 */
 
 /* 
-  Add your pseudocode here
+  
+Add your pseudocode here
 */
 
 /*
